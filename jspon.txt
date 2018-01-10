@@ -1,0 +1,6 @@
+http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js    //获得当前网络所在城市
+
+http://wthrcdn.etouch.cn/WeatherApi?city=洛阳		//获得洛阳近几天的天气情况
+
+http://www.weather.com.cn/data/cityinfo/101010100.html
+
