@@ -3,6 +3,8 @@ package com.lmissw.mydesignedapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Message;
 import android.support.constraint.ConstraintLayout;
@@ -59,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
         ivStatus = findViewById(R.id.eStatus);
         updateWeather();    //启动首先更新天气
 
+       // Log.i("Infor",getValueFromKey("app"));
+        if(getValueFromKey("app").equals("ynxf")==false)
+        {
+            PutKeyAndValue("app","ynxf");
+            PutKeyAndValue("allPowerMax","2000");
+            PutKeyAndValue("Power1Max","800");
+            PutKeyAndValue("Power2Max","800");
+            PutKeyAndValue("Power3Max","800");
+            PutKeyAndValue("blockOutTime","5");
+        }
         Log.i("Infor","onCreate");
 
         new TimeThread().start();
@@ -278,6 +290,29 @@ public class MainActivity extends AppCompatActivity {
                 });
         // 显示
         normalDialog.show();
+    }
+
+
+    public void setClick( View view ) {
+        Log.i("Infor","setClick");
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,setActivity.class);
+        startActivity(intent);
+    }
+
+    private String getValueFromKey( String key )
+    {
+        SharedPreferences userSettings = getSharedPreferences("setting", 0);
+        return userSettings.getString(key,"default");
+    }
+
+    private void PutKeyAndValue( String key, String Value )
+    {
+        SharedPreferences userSettings= getSharedPreferences("setting", 0);
+        SharedPreferences.Editor editor = userSettings.edit();
+        editor.remove(key);
+        editor.putString(key,Value);
+        editor.commit();
     }
 
 }

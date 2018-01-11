@@ -94,8 +94,10 @@ public class getWeather extends MainActivity {
         int end = jsonText.toString().lastIndexOf('}'); //获取最后一个‘}’的位置
 
         String jsonStr = jsonText.toString().substring(begin,end+1);    //提取json数据
-        analysisJsonPosition(jsonStr);      //解析json数据
+        if(analysisJsonPosition(jsonStr)==false)      //解析json数据
+            return false;
         readFromAssets(); //转换为城市ID
+        Log.i("Infor", "readFromAssets" );
         return true;
     }
 
@@ -209,9 +211,9 @@ public class getWeather extends MainActivity {
     /**
      * 通过城市名称获取城市ID代码
      */
-    private String readFromAssets() {
+    private boolean readFromAssets() {
         if(localCity==null)
-            return null;
+            return false;
         InputStream inputStream = null;
         try {
 
@@ -232,11 +234,11 @@ public class getWeather extends MainActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return true;
     }
 
 
-    private void  analysisJsonPosition( String jsonString )
+    private boolean  analysisJsonPosition( String jsonString )
     {
         try {
             JSONTokener  jsonParser = new JSONTokener( jsonString );
@@ -254,6 +256,9 @@ public class getWeather extends MainActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        if(localCity.length()<2)
+            return false;
+        return true;
 
     }
 

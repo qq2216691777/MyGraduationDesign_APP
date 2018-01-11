@@ -118,10 +118,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btSet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="572dp"
         android:layout_marginTop="340dp"
+        android:onClick="setClick"
         android:text="设置"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

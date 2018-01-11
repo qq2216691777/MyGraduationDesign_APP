@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="90dp"
+        android:id="@+id/frameLayout3">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="总路最大功率(W)："
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:maxLength="4"
+                        android:inputType="number"
+                        android:digits="1234567890"
+                        android:id="@+id/powerAllMax"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="支①最大功率(W)："
+                        android:textSize="20dp" />
+                    <EditText
+                        android:id="@+id/power1Max"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:maxLength="4"
+                        android:inputType="number"
+                        android:digits="1234567890"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="支②最大功率(W)："
+                        android:textSize="20dp" />
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:maxLength="4"
+                        android:inputType="number"
+                        android:digits="1234567890"
+                        android:id="@+id/power2Max"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="支③最大功率(W)："
+                        android:textSize="20dp" />
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:maxLength="4"
+                        android:digits="1234567890"
+                        android:inputType="number"
+                        android:id="@+id/power3Max"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无人断电时间(M)："
+                        android:textSize="20dp" />
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:maxLength="2"
+                        android:inputType="number"
+                        android:digits="1234567890"
+                        android:id="@+id/blockOutTime"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/frameLayout3"
+        android:layout_alignStart="@+id/frameLayout3"
+        android:layout_below="@+id/frameLayout3"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="28dp"
+        android:onClick="okClick"
+        android:text="确定" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ok"
+        android:layout_marginLeft="113dp"
+        android:layout_marginStart="113dp"
+        android:layout_toEndOf="@+id/ok"
+        android:layout_toRightOf="@+id/ok"
+        android:onClick="cancelClick"
+        android:text="取消" />
+
+
+</RelativeLayout>
